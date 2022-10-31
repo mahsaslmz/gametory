@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>تعداد نقطه </title>
+</head>
+<body>
+<div class="bodyy">
+    <div class="container">
+        <h2>نقطه شمار</h2>
+        <label for="txt">متن شما</label>
+        <input type="text" name="" id="txt">
+        <!-- vagti rush click shod function count() ro seda bezan -->
+        <button onclick="count()">نقطه ها را بشمار</button>   
+        <br><br>
+        <label> تعداد نقاط :</label>
+        <label id="resualt"> 0 </label>
+        
+    </div>
+</div>
+</body>
+<script>
+        var dotcounts = 0;
+        singleDots = ["ب","ج","خ","ذ","ز","ض","ظ","غ","ف","ن"],
+        doubleDots = ["ت","ق",""]
+        tripleDots = ["پ","ث","چ","ژ","ش"]
+        midletterDots = ["ی"];
+
+
+        function count(){
+            var text= document.getElementById("txt").value;
+            // text ke neveshtim anra be araye tabdil mikone ve tak tak huruf ra joda mikonad
+            var splited = text.split("");
+            for (let i = 0; i < splited.length; i++) {
+                const letter = splited[i];
+                if (singleDots.includes(letter)) {
+                    dotcounts++;
+                }
+                if (doubleDots.includes(letter)) {
+                    dotcounts+=2;
+                }
+                if (tripleDots.includes(letter)) {
+                    dotcounts+=3;
+                }
+                // age kalame shamel y bud va y akharin khune az araye man nabud- 
+                if (midletterDots.includes(letter) && i !== splited.length -1) {
+                    if (splited[i+1] !== " ") {
+                        dotcounts+=2;
+                    }                    
+                }
+            }
+            document.getElementById("resualt").innerHTML=dotcounts;
+            dotcounts=0;
+        }
+    
+    
+</script>
+</html>

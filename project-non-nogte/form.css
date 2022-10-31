@@ -1,0 +1,26 @@
+*{
+    direction: rtl;
+}
+.bodyy{
+    
+    padding:15% 25%;
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    border: 5px solid rgb(0, 174, 255);
+    text-align: center;
+    padding: 5px;
+    
+}
+button{
+    width: 100px;
+    height: 30px;
+    background-color: aqua;
+    border:white;
+    border-radius: 15px
+    
+}
